@@ -7,7 +7,6 @@ const highScoreElem = document.querySelector(`#highscore`);
 const totalScoreElem = document.querySelector(`#score`);
 const curScoreElem = document.querySelector(`#current`);
 const diceRollsElem = document.querySelector(`#dicerolls`);
-console.log(diceRollsElem);
 const diceImgElem = document.querySelector(`.dice`);
 const btnNewGameElem = document.querySelector(`.btn-new`);
 const btnRollDiceElem = document.querySelector(`.btn-roll`);
@@ -36,6 +35,8 @@ function setup() {
   diceImgElem.classList.add(`hidden`);
   leftElem.classList.remove(`game-winner`);
   rightElem.classList.remove(`game-winner`);
+  btnRollDiceElem.style.backgroundColor = "#fff";
+  btnRollDiceElem.style.color = "#444";
 }
 // setup();
 
@@ -76,7 +77,7 @@ function holdscore() {
     totalScoreElem.textContent = score;
 
     // Check if player's score is >= 50
-    if (score >= 10) {
+    if (score >= 50) {
       // End the game by setting gamestate to false
       gameState = false;
       highScore = Math.min(highScore, dicerolls);
